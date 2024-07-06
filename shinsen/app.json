@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "shinsen",
+    "slug": "shinsen",
+    "version": "1.0.0",
+    "plugins": [
+      "expo-font",
+      "expo-video"
+    ]
+  }
+}
