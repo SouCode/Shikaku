@@ -1,2 +1,2 @@
 # Shikaku
-Tik Tok Clone
+Video Platform
