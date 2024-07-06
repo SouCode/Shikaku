@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { Video, ResizeMode } from 'expo-av';
+import Colors from '../../Utils/Colors';
+
 
 export default function LoginScreen() {
   return (
@@ -14,6 +16,31 @@ export default function LoginScreen() {
       resizeMode='cover'
       isLooping={true}
       />
+      <View style={{
+        display:'flex',
+        alignItems:'center',
+        paddingTop:200,
+        flex:1,
+        paddingHorizontal:20,
+        backgroundColor:Colors.BACKGROUND_TRASNP
+      }}>
+        <Text
+        style={{
+            fontFamily:'Outfit-Bold',
+            color:Colors.WHITE,
+            fontSize:35,
+        }}
+        >Shi Kaku</Text>
+        <Text
+        style={{
+            fontFamily:'Outfit-Regular',
+            color:Colors.WHITE,
+            fontSize:17,
+            textAlign:'center',
+            marginTop:15
+        }}
+        >Zone into your Abyss{'\n'}Conquer your Addictions</Text>
+      </View>
     </View>
   )
 }
