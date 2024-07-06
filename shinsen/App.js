@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
+import LoginScreen from './Apps/Screens/Login/LoginScreen';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,8 +17,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontFamily: 'Outfit-Regular' }}>Shinsen is Watching!</Text>
-      <StatusBar style="auto" />
+      <LoginScreen/>
     </View>
   );
 }
@@ -26,7 +26,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
