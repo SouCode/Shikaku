@@ -1,8 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
+import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import LoginScreen from './Apps/Screens/Login/LoginScreen';
+import HomeScreen from './Apps/Screens/Login/Home/HomeScreen';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,9 +17,16 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <LoginScreen/>
-    </View>
+    <ClerkProvider publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+      <View style={styles.container}>
+        <SignedIn>
+          <HomeScreen/>
+        </SignedIn>
+        <SignedOut>
+          <LoginScreen />
+        </SignedOut>
+      </View>
+    </ClerkProvider>
   );
 }
 
