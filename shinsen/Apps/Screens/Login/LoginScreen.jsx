@@ -35,7 +35,9 @@ export default function LoginScreen() {
           .from('Users')
           .insert([
             { name: signUp?.firstName, 
-              email: signUp?.emailAddress },
+              email: signUp?.emailAddress,
+              username:(signUp?.emailAddress).split('@')[0]
+            },
           ])
           .select()
 
