@@ -3,7 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import LoginScreen from './Apps/Screens/Login/LoginScreen';
-import HomeScreen from './Apps/Screens/Login/Home/HomeScreen';
+import HomeScreen from './Apps/Screens/Home/HomeScreen';
+import TabNavigation from './Apps/Navigations/TabNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,7 +22,9 @@ export default function App() {
     <ClerkProvider publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <View style={styles.container}>
         <SignedIn>
-          <HomeScreen/>
+          <NavigationContainer>
+                <TabNavigation/>
+          </NavigationContainer>
         </SignedIn>
         <SignedOut>
           <LoginScreen />
