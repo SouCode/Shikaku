@@ -5,15 +5,47 @@ import HomeScreen from './../Screens/Home/HomeScreen'
 import SearchScreen from './../Screens/Search/SearchScreen'
 import AddScreen from './../Screens/Add/AddScreen'
 import ProfileScreen from './../Screens/Profile/ProfileScreen'
+import { Ionicons } from '@expo/vector-icons';
+import Colors from '../Utils/Colors';
 
 const Tab=createBottomTabNavigator();
 export default function TabNavigation() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name='Home' component={HomeScreen} />
-      <Tab.Screen name='Search' component={SearchScreen} />
-      <Tab.Screen name='Add' component={AddScreen} />
-      <Tab.Screen name='Profile' component={ProfileScreen} />
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor:Colors.BLACK,
+        headerShown:false
+      }}
+    >
+      <Tab.Screen name='Home' component={HomeScreen} 
+        options={{
+          tabBarIcon:({color,size})=>(
+            <Ionicons name='home' size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen name='Search' component={SearchScreen}
+        options={{
+          tabBarIcon:({color,size})=>(
+            <Ionicons name='search' size={size} color={color} />
+          )
+        }}
+      />
+      <Tab.Screen name='Add' component={AddScreen}
+        options={{
+          tabBarIcon:({color,size})=>(
+            <Ionicons name="add-circle-sharp" size={size} color={color} />
+          )
+        }}
+      />
+      <Tab.Screen name='Profile' component={ProfileScreen}
+        options={{
+          tabBarIcon:({color,size})=>(
+            <Ionicons name='people-circle-sharp' size={size} sizecolor={color} />
+          )
+        }}
+      />
     </Tab.Navigator>
   )
 }

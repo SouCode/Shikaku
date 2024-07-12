@@ -36,7 +36,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, //Dont remove the flex or the Navigation will mess up and be at the top of screen
     backgroundColor: '#fff',
   },
 });
